@@ -10,7 +10,7 @@ import SpringyCard from './components/SpringyCard.tsx';
 
 
 function App() {
-  const searchParams = new URLSearchParams(window.location.search);
+  const searchParams = new URLSearchParams();
   const userId = searchParams.get('user_id') ?? '';
   const { loading, status } = useLanyard({
     userId,
@@ -18,9 +18,13 @@ function App() {
   });
 
   if (userId === '') {
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.hash = '';
+
     return <>
       <p>Need to include a user_id in the url like so:</p><br />
-      <p>{location.href}?user_id=3474873838384874</p>
+      <p>{url.toString()}?user_id=3474873838384874</p>
     </>;
   }
 
