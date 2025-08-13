@@ -19,7 +19,7 @@ function App() {
 
   if (userId === '') {
     return <>
-      <p>Need to include a userId in the url like so:</p><br />
+      <p>Need to include a user_id in the url like so:</p><br />
       <p>{location.href}?user_id=3474873838384874</p>
     </>;
   }
