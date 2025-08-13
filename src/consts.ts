@@ -5,4 +5,6 @@ export const DISCORD_AVATAR_URL = `${DISCORD_CDN}/avatars/{userId}/{avatar}`;
 export const ACTIVITY_TYPES = {
   PLAYING: 0,
   STREAMING: 1,
-} as const
+} as const;
+
+export type ActivityType = (typeof ACTIVITY_TYPES)[keyof typeof ACTIVITY_TYPES];

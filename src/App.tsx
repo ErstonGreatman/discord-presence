@@ -2,7 +2,7 @@ import './App.css';
 import { Box, CardContent, Typography, CircularProgress, Avatar } from '@mui/material';
 import { useLanyard } from 'react-use-lanyard';
 import { getActivityType } from './utils/utils.ts';
-import { DISCORD_AVATAR_URL } from './consts.ts';
+import { DISCORD_AVATAR_URL, type ActivityType } from './consts.ts';
 import format from 'string-template';
 import { ErrorBoundary } from 'react-error-boundary';
 import StyledBadge from './components/StyledBadge.tsx';
@@ -66,7 +66,7 @@ function App() {
                   sx={{ color: 'text.secondary' }}
                 >
                   {status.activities.length
-                    ? <span>{getActivityType(status.activities[0].type)}&nbsp;
+                    ? <span>{getActivityType(status.activities[0].type as ActivityType)}&nbsp;
                       <strong>{status.activities[0].name}</strong></span>
                     : <span>Connection... untraceable</span>
                   }
