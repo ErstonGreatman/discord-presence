@@ -10,7 +10,7 @@ import SpringyCard from './components/SpringyCard.tsx';
 
 
 function App() {
-  const searchParams = new URLSearchParams();
+  const searchParams = new URLSearchParams(window.location.search);
   const userId = searchParams.get('user_id') ?? '';
   const { loading, status } = useLanyard({
     userId,
