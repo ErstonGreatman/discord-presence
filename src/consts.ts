@@ -7,4 +7,10 @@ export const ACTIVITY_TYPES = {
   STREAMING: 1,
 } as const;
 
+export const ACTIVITY_NAMES = {
+  PLAYING: 'Playing',
+  STREAMING: 'Streaming',
+} as const;
+
 export type ActivityType = (typeof ACTIVITY_TYPES)[keyof typeof ACTIVITY_TYPES];
+export type ActivityName = (typeof ACTIVITY_NAMES)[keyof typeof ACTIVITY_NAMES];
